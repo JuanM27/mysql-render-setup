@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: mysql-database
+    env: docker
+    plan: starter # Cambiar según el plan de Render
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: MYSQL_ROOT_PASSWORD
+        value: root
+      - key: MYSQL_DATABASE
+        value: TFG-GestorGastos
+      - key: MYSQL_USER
+        value: user
+      - key: MYSQL_PASSWORD
+        value: user
+    ports:
+      - containerPort: 3306
+        protocol: tcp
